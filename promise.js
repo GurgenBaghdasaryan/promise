@@ -1,25 +1,22 @@
-const prom = (item) => {
+const delayedUpperCase = (item) => {
   return new Promise((res, rej) => {
-    if (typeof item === 'string') {
-      setTimeout(() => {
+    setTimeout(() => {
+      if (typeof item === "string") {
         res(item.toUpperCase());
-      }, 500);
-    } else
-      [
-        setTimeout(() => {
-          rej("Error:");
-        }, 500),
-      ];
+      } else {
+        rej("Error:");
+      }
+    }, 500);
   });
 };
 
-const itemProm = async (check) => {
+const isStr = async (check) => {
   try {
-    let result = await prom(check);
+    let result = await delayedUpperCase(check);
     console.log(result);
   } catch (e) {
     console.log(e);
   }
 };
 
-itemProm("asd");
+isStr("asd");
