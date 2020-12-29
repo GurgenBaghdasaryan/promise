@@ -1,4 +1,4 @@
-const prom = (item) => {
+const delayedUpperCase = (item) => {
   return new Promise((res, rej) => {
     if (typeof item === 'string') {
       setTimeout(() => {
@@ -13,7 +13,7 @@ const prom = (item) => {
   });
 };
 
-const itemProm = async (check) => {
+const isStr= async (check) => {
   try {
     let result = await prom(check);
     console.log(result);
@@ -22,4 +22,4 @@ const itemProm = async (check) => {
   }
 };
 
-itemProm("asd");
+isStr("asd");
